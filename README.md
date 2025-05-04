@@ -30,7 +30,7 @@ Installation
 
 Clone the Repository:
 git clone <repository-url>
-cd pdf-rag-backend
+cd document-rag
 
 
 Install Dependencies:
@@ -56,7 +56,7 @@ uvicorn main:app --host 0.0.0.0 --port 8001
 
 
 Project Structure
-pdf-rag-backend/
+document-rag-backend/
 ├── main.py           # Core FastAPI application with endpoints and logic
 ├── db.py            # ChromaDB interactions for vector storage and retrieval
 ├── requirements.txt  # Python dependencies
@@ -116,7 +116,7 @@ Delete a PDF:Send a DELETE request to /delete-pdf with the s3_key and filename t
 Notes
 
 Table Retrieval: The application has known issues with table retrieval accuracy, which are being refined. Tables are converted to JSON format to improve retrieval.
-Chunking: Q&A and table chunking are optimized, but normal text chunking may need further tuning for edge cases.
+Chunking: Q&A and normal chunking are optimized, but table text chunking may need further tuning for edge cases.
 Authentication: Ensure Directus is properly configured for OAuth2 token validation.
 Logging: Logs are written to app.log for debugging and monitoring.
 
@@ -143,5 +143,3 @@ Missing Embeddings: Confirm that the SageMaker endpoint is properly deployed and
 
 Contributing
 Contributions are welcome! Please submit a pull request or open an issue for bugs, feature requests, or improvements.
-License
-This project is licensed under the MIT License.
