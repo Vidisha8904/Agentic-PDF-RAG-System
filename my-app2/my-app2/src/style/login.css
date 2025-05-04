@@ -1,0 +1,307 @@
+/* Add this to your login.css file */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+:root {
+  --space-primary: #8A2BE2;
+  --space-secondary: #4B0082;
+  --space-accent: #00FFFF;
+  --space-text: #E6E6FA;
+  --space-background: #0F0F23;
+}
+
+/* Space background with stars */
+.cosmic-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #090523 0%, #171246 50%, #290066 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Stars effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 160px 120px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s infinite;
+  z-index: 1;
+}
+
+/* Twinkling effect */
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 100px 50px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 200px 100px, #ffffff, rgba(0, 0, 0, 0)),
+                    radial-gradient(2px 2px at 300px 30px, #ffffff, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 800px 800px;
+  animation: twinkle 7s infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@keyframes twinkle {
+  0% {opacity: 0.3;}
+  50% {opacity: 0.8;}
+  100% {opacity: 0.3;}
+}
+
+/* Spacecraft animation */
+.spacecraft {
+  position: absolute;
+  top: 15%;
+  left: -100px;
+  width: 60px;
+  height: 30px;
+  background: radial-gradient(ellipse at center, var(--space-accent) 0%, rgba(0,255,255,0) 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--space-accent);
+  z-index: 2;
+  animation: fly 15s linear infinite;
+}
+
+@keyframes fly {
+  from {
+    left: -100px;
+    transform: rotate(30deg);
+  }
+  to {
+    left: calc(100% + 100px);
+    transform: rotate(30deg);
+  }
+}
+
+/* Meteor animation */
+.meteor {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #ffffff 100%);
+  transform: rotate(45deg);
+  z-index: 2;
+  animation: meteor 6s linear infinite;
+  animation-delay: 2s;
+}
+
+@keyframes meteor {
+  0% {
+    top: -100px;
+    left: 80%;
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    top: 80%;
+    left: 20%;
+    opacity: 0;
+  }
+}
+
+/* Auth container styling */
+.space-auth-container {
+  position: relative;
+  background: rgba(15, 15, 35, 0.8);
+  border: 1px solid var(--space-accent);
+  border-radius: 15px;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.space-auth-title {
+  color: var(--space-accent);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--space-accent);
+}
+
+.space-error-message {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff6b6b;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-left: 3px solid #ff6b6b;
+}
+
+.space-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.space-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.space-input-label {
+  color: var(--space-text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.space-input-wrapper {
+  position: relative;
+}
+
+.space-auth-input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(30, 30, 60, 0.5);
+  border: 1px solid var(--space-primary);
+  border-radius: 8px;
+  color: var(--space-text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.space-auth-input::placeholder {
+  color: rgba(230, 230, 250, 0.5);
+}
+
+.space-auth-input:focus {
+  outline: none;
+  border-color: var(--space-accent);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.input-glow {
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: var(--space-accent);
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--space-accent);
+}
+
+.space-auth-input:focus + .input-glow {
+  opacity: 1;
+}
+
+.space-auth-button {
+  position: relative;
+  margin-top: 15px;
+  padding: 15px;
+  background: linear-gradient(to right, var(--space-secondary), var(--space-primary));
+  border: none;
+  border-radius: 8px;
+  color: var(--space-text);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.space-auth-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(0, 255, 255, 0.3), transparent);
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.space-auth-button:hover .button-glow {
+  left: 100%;
+}
+
+.space-auth-button:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transform: translateY(-3px);
+}
+
+.space-link-text {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--space-text);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+}
+
+.space-auth-link {
+  color: var(--space-accent);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.space-auth-link:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--space-accent);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--space-accent);
+}
+
+.space-auth-link:hover:after {
+  width: 100%;
+}
+
+.space-auth-link:hover {
+  text-shadow: 0 0 5px var(--space-accent);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .space-auth-container {
+    padding: 30px 20px;
+  }
+  
+  .space-auth-title {
+    font-size: 24px;
+  }
+}
