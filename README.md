@@ -22,8 +22,8 @@ Prerequisites
 Python 3.9+
 Docker (optional, for containerized deployment)
 AWS account with S3 bucket and SageMaker endpoint configured
-Directus instance running at http://directus:8055
-ChromaDB instance running at chroma-elb.amazonaws.com:8000
+Directus instance configured via the .env file
+ChromaDB instance configured via the .env file
 Environment variables configured in a .env file (see below)
 
 Installation
@@ -45,6 +45,9 @@ AWS_SECRET_ACCESS_KEY=<your-aws-secret-key>
 AWS_REGION=<your-aws-region>
 S3_BUCKET_NAME=<your-s3-bucket-name>
 SAGEMAKER_ENDPOINT_NAME=<your-sagemaker-endpoint-name>
+CHROMADB_HOST=<your-chromadb-host>
+CHROMADB_PORT=8000
+DIRECTUS_URL=<your-directus-url>
 
 
 Run the Application:
