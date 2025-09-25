@@ -13,13 +13,13 @@ from dotenv import load_dotenv
 load_dotenv()
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY")
 SAGEMAKER_ENDPOINT_NAME=os.getenv("SAGEMAKER_ENDPOINT_NAME")
-
+CHROMA_ENDPOINT=os.getenv("CHROMA_ENDPOINT")
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize ChromaDB client
-client = chromadb.HttpClient(host="chroma-vidisha-lb-1390783373.ap-southeast-1.elb.amazonaws.com", port=8000)
+client = chromadb.HttpClient(host="CHROMA_ENDPOINT", port=8000)
 client_emb = boto3.client('sagemaker-runtime',region_name='ap-southeast-1')
 
 # client = chromadb.HttpClient(host="chroma", port=8000)
@@ -240,19 +240,6 @@ def delete_pdf_from_collection(user_id: str, filename: str):
 # logging.basicConfig(level=logging.INFO)
 # logger = logging.getLogger(__name__)
 
-# # Initialize ChromaDB client
-# client = chromadb.HttpClient(host="chroma-vidisha-lb-1390783373.ap-southeast-1.elb.amazonaws.com", port=8000)
-# collection = client.get_collection(name='nomic')
-
-# # Initialize embedding model
-# try:
-#     embedding_model = HuggingFaceEmbeddings(
-#         model_name="/root/.cache/huggingface/models--nomic-ai--nomic-embed-text-v1/snapshots/720244025c1a7e15661a174c63cce63c8218e52b",
-#         model_kwargs={'trust_remote_code': True}
-#     )
-# except Exception as e:
-#     logger.error(f"Error loading model {str(e)}\n{traceback.format_exc()}")
-#     raise
 
 # def cosine_similarity(a, b):
 #     """Compute cosine similarity between two vectors."""
