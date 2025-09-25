@@ -1,8 +1,4 @@
-# chunking with agent, table chunking complete no table is splitted, every table has headers.
-# chunking for qa perfect, chunking for normal is done
-# table retrieval issues need to refine that
-# 25/4
-
+# MAIN FILE CONTAINING THE CHUNKING LOGIC
 from fastapi import FastAPI, UploadFile, HTTPException
 from pydantic import BaseModel
 import os
