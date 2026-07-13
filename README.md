@@ -76,6 +76,7 @@ before embeddings are generated.
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/792d93ea-bc25-4e33-910a-e550d1c81aa5" />
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/92fd8e6c-0340-4a50-a54b-a490d8f6fd2e" />
 
 ## 🔍 Semantic Retrieval
 
